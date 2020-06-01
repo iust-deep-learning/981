@@ -15,4 +15,24 @@ permalink: /final_project/
     </ul>
   
     Please read the <a href='{{ "/final_project/guidelines" | prepend: site.baseurl }}'>Final Project Guidelines</a> carefully, We'll guide you through all details you need.
+
+	<br/><br/>
+    We have made our students' projects available; you can use them for inspiration or even contact the authors if you are interested.
+  
+  <br/><br/>
+  <h1>Projects</h1>
+
+  <ul>
+    {% for proj in site.data.projects.all_projects %}
+    <li>
+        <span><a style="font-size: 1.05em;font-weight: bold" href="#">{{ proj.title }}</a></span><br>
+        <div style="font-size: 0.85em; color: gray;">{{ proj.authors }}</div>
+        <div style="margin-bottom: 15px; font-size: 0.85em;">
+            <!-- <strong> -->
+            {% include project_links.html project=proj %}
+            <!-- </strong> -->
+          </div>
+    </li>
+    {% endfor %}
+    </ul>
   </div>
